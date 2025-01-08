@@ -10,6 +10,12 @@
   <!-- Bootstrap core CSS -->
   <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
 
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="./assets/css/fontawesome.css">
@@ -34,6 +40,15 @@
   <script src="./assets/js/video.js"></script>
   <script src="./assets/js/slick-slider.js"></script>
   <script src="./assets/js/custom.js"></script>
+
+  <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- Include Isotope -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
   <script>
       //according to loftblog tut
       $('.nav li:first').addClass('active');
@@ -80,5 +95,70 @@
         checkSection();
       });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach((accordion) => {
+    const head = accordion.querySelector(".accordion-head");
+    const body = accordion.querySelector(".accordion-body");
+
+    head.addEventListener("click", () => {
+      const isOpen = body.classList.contains("active");
+
+      // Close all other accordions
+      document.querySelectorAll(".accordion-body").forEach((otherBody) => {
+        if (otherBody !== body) {
+          otherBody.classList.remove("active");
+          otherBody.style.maxHeight = null;
+          otherBody.parentElement.querySelector(".accordion-head").classList.remove("open");
+        }
+      });
+
+      // Toggle current accordion
+      if (!isOpen) {
+        body.classList.add("active");
+        body.style.maxHeight = body.scrollHeight + "px"; // Dynamically set height to fit content
+        head.classList.add("open");
+      } else {
+        body.classList.remove("active");
+        body.style.maxHeight = null; // Collapse the accordion
+        head.classList.remove("open");
+      }
+    });
+  });
+});
+
+  </script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  // Initialize Isotope
+  const grid = document.querySelector(".grid");
+  const iso = new Isotope(grid, {
+    itemSelector: ".templatemo-item-col",
+    layoutMode: "fitRows", // You can change this to "masonry" for a different effect
+  });
+
+  // Filter Items on Button Click
+  const filterButtons = document.querySelectorAll(".filters li");
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Remove 'active' class from all buttons
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      // Add 'active' class to the clicked button
+      this.classList.add("active");
+
+      // Get filter value from the button's data attribute
+      const filterValue = this.getAttribute("data-filter");
+      iso.arrange({ filter: filterValue });
+    });
+  });
+});
+
+</script>
+
+<script></script>
 </body>
 </html>
