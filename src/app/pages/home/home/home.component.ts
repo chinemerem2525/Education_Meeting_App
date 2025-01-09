@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 
 declare var $: any;
 
@@ -8,21 +8,37 @@ declare var $: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements AfterViewInit{
+
+  @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>; //Target the video element using a template variable
+  @ViewChildren('body') accordionBodies!: QueryList<ElementRef>; //Targets the accordion using a template variable
+  activeIndex: number | null = null; //Active index of the accordion
+
+  constructor(private renderer: Renderer2) {}
+
+
   ngAfterViewInit() {
     $('.owl-courses-item').owlCarousel({
+      autoplay: true,
       loop: true,
       margin: 10,
       nav: true,
+      height: 20,
       responsive: {
         0: { items: 1 },
         600: { items: 2 },
         1000: { items: 3 }
       }
     });
+
     $('.owl-service-item').owlCarousel({
+      items: 1,
       loop: true,
-      margin: 10,
-      nav: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true,
+      nav: false,
+      dots: true,
+      margin: 20,
       responsive: {
         0: { items: 1 },
         600: { items: 2 },
@@ -31,13 +47,36 @@ export class HomeComponent implements AfterViewInit{
     });
 
     
+
+    const video = this.bgVideo.nativeElement;
+
+    // Ensure the video plays on initialization
+    setTimeout(() => {
+      video.play().catch((error) => {
+        console.error('Autoplay failed. Attempting to resolve:', error);
+        // Optional: handle error, e.g., show a play button for user interaction
+      });
+    }, 100); // Adding a slight delay to ensure the video element is initialized
+
   }
 
+  // const video = this.bgVideo.nativeElement;
 
-  @ViewChildren('body') accordionBodies!: QueryList<ElementRef>;
+  //   // Attempt to play immediately if autoplay is allowed
+  //   video.play().catch((error) => {
+  //     console.error('Autoplay failed. Attempting to resolve:', error);
 
-  activeIndex: number | null = null;
-
+  //     // Add a click event listener to the document to resume playback on user interaction
+  //     this.renderer.listen('document', 'click', () => {
+  //       video.play().then(() => {
+  //         console.log('Video started playing after user interaction');
+  //       }).catch(err => {
+  //         console.error('Error playing the video after user interaction:', err);
+  //       });
+  //     });
+  //   });
+ 
+// Array of objects that stores the content of the accordion
   accordions = [
     {
       title: 'About Edu Meeting HTML Template',

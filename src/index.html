@@ -17,6 +17,7 @@
 
 
 
+
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="./assets/css/fontawesome.css">
   <link rel="stylesheet" href="./assets/css/templatemo-edu-meeting.css">
@@ -159,6 +160,37 @@
 
 </script>
 
-<script></script>
+<script>
+  window.addEventListener('load', () => {
+    const video = document.getElementById('bg-video');
+    if (video) {
+        // Attempt to play the video programmatically
+        video.play().then(() => {
+            console.log("Video is playing successfully.");
+        }).catch(error => {
+            console.error("Video playback failed:", error);
+            // Fallback: Add a click event listener to start playback
+            document.body.addEventListener('click', () => {
+                video.play();
+            }, { once: true }); // Only trigger once
+        });
+    }
+});
+
+</script>
+<script>
+  $(document).ready(function () {
+    $('.owl-service-item').owlCarousel({
+      items: 1,               // Number of items to display
+      loop: true,             // Enable infinite loop
+      autoplay: true,         // Enable autoplay
+      autoplayTimeout: 3000,  // Time between slides (in milliseconds)
+      autoplayHoverPause: true, // Pause autoplay when hovering
+      nav: false,             // Hide navigation arrows
+      dots: true              // Show navigation dots
+    });
+  });
+</script>
+
 </body>
 </html>
