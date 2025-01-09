@@ -1,3 +1,10 @@
+.owl-carousel .item .down-content{
+  height: 160px !important;
+}
+.owl-carousel .item{
+  width: 400px;
+}
+/* Accordion section */
 .accordions {
   margin-top: 20px;
 }

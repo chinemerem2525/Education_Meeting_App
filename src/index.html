@@ -192,5 +192,15 @@
   });
 </script>
 
+<script>
+  $(window).on('load', function () {
+  // Reinitialize the grid after the page loads
+  $('.grid').isotope({
+    itemSelector: '.templatemo-item-col',
+    layoutMode: 'fitRows',
+  });
+});
+
+</script>
 </body>
 </html>
