@@ -1,0 +1,50 @@
+.sub-header {
+    background-color: #000; /* Black background */
+    
+
+  }
+  
+ 
+  .sub-header .left-content em {
+    font-style: italic;
+    color: #FFD700; /* White text for emphasis */
+  }
+  .sub-header .right-icons ul li a {
+    color: #FFD700;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  .sub-header .right-icons ul li a:hover {
+    color: #FFF; /* White on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+  }
+  .header-area .logo {
+   
+    color: #FFF;
+    
+  }
+  .header-area .logo:hover {
+    color: #FFD700; 
+  }
+  .header-area .nav li a {
+    color: #FFF;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .header-area .nav li a:hover {
+    
+    color: #000000;
+  }
+  .header-area .nav .has-sub > a::after {
+    content: "▼";
+    color: #FFD700;
+  }
+  .header-area .nav .sub-menu li a {
+    color: #FFD700;
+  }
+  .header-area .nav .sub-menu li a:hover {
+
+    color: #000000;
+  }
+  .header-area .menu-trigger:hover span {
+    color: #000000;
+  }
