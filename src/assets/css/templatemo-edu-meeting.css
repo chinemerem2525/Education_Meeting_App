@@ -246,7 +246,7 @@ header
    color: #FFD700;
 }
 .background-header {
-  background-color: #fff!important;
+  background-color: #FFD700!important;
   height: 80px!important;
   position: fixed!important;
   top: 0!important;
@@ -836,7 +836,7 @@ services
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
-  background-color: #fff;
+  background-color: #FFD700;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -875,7 +875,7 @@ services
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
-  background-color: #fff;
+  background-color: #FFD700;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -904,7 +904,7 @@ section.upcoming-meetings .section-heading {
 }
 
 section.upcoming-meetings .categories {
-  background-color: #fff;
+  background-color: #FFD700;
   border-radius: 20px;
   padding: 40px;
   margin-right: 45px;
@@ -975,7 +975,7 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content {
-  background-color: #fff;
+  background-color: #FFD700;
   padding: 30px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -1055,7 +1055,7 @@ section.apply-now .item p {
 .accordions {
   border-radius: 20px;
   padding: 40px;
-  background-color: #fff;
+  background-color: #FFD700;
   margin-left: 45px;
 }
 .accordions .accordion {
@@ -1119,7 +1119,7 @@ section.our-courses {
 }
 
 .our-courses .item .down-content {
-  background-color: #fff;
+  background-color: #FFD700;
 }
 
 .our-courses .item .down-content h4 {
@@ -1172,7 +1172,7 @@ section.our-courses {
   transition: all .5s;
   width: 7px;
   height: 7px;
-  background-color: #fff;
+  background-color: #FFD700;
   margin: 0px 5px;
   border-radius: 50%;
   outline: none;
@@ -1203,7 +1203,7 @@ section.our-courses {
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
-  background-color: #fff;
+  background-color: #FFD700;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1242,7 +1242,7 @@ section.our-courses {
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
-  background-color: #fff;
+  background-color: #FFD700;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1336,14 +1336,14 @@ section.contact-us {
 }
 
 section.contact-us #contact {
-  background-color: #fff;
+  background-color: #000000;
   border-radius: 20px;
   padding: 40px;
 }
 
 section.contact-us #contact h2 {
   text-transform: uppercase;
-  color: #1f272b;
+  color: #fff;
   border-bottom: 1px solid #eee;
   margin-bottom: 40px;
   padding-bottom: 20px;
@@ -1512,7 +1512,7 @@ section.meetings-page .filters {
 section.meetings-page .filters li {
   font-size: 13px;
   color: #000000;
-  background-color: #fff;
+  background-color: #FFD700;
   padding: 11px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -1595,7 +1595,7 @@ section.meetings-page .pagination ul li a:hover {
 }
 
 .meeting-single-item .down-content {
-  background-color: #fff;
+  background-color: #FFD700;
   padding: 40px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
