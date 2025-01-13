@@ -21,39 +21,67 @@
     </div>
   </div>
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
-                          Edu Meeting
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li class="scroll-to-section"><a href="/home" class="active">Home</a></li>
-                          <li><a href="/meeting">Meetings</a></li>
-                          <li class="scroll-to-section"><a routerLink="/home" fragment="apply">Apply Now</a></li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Pages</a>
-                              <ul class="sub-menu">
-                                  <li><a href="/meeting">Upcoming Meetings</a></li>
-                                  <li><a href="meeting-detail">Meeting Details</a></li>
-                              </ul>
-                          </li>
-                          <li class="scroll-to-section"><a routerLink="/home" fragment="courses">Courses</a></li> 
-                          <li class="scroll-to-section"><a routerLink="/home" fragment="contact">Contact Us</a></li> 
-                      </ul>        
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+  <div class="container">
+      <div class="row align-items-center">
+          <!-- Top Section: Logo and Search Bar -->
+          <div class="col-12 d-flex justify-content-between align-items-center">
+              <!-- Logo -->
+              <a href="/home" class="logo">
+                  <img src="../../../../../assets/images/logo1.png" alt="Morrhtech Logo" style="width: 100; height: 70px; margin-top: 10px;">
+              </a>
+              <!-- Search Bar -->
+              <form class="search-bar">
+                  <input type="text" placeholder="Search...">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
           </div>
       </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+      <div class="row">
+          <!-- Bottom Section: Navigation Menu -->
+          <div class="col-12">
+              <nav class="main-nav">
+                  <!-- ***** Menu Start ***** -->
+                  <ul class="nav">
+                      <li class="scroll-to-section"><a href="/home" class="active">Home</a></li>
+                      <li class="scroll-to-section"><a href="/about">About Us</a></li>
+                      <li class="has-sub">
+                          <a href="javascript:void(0)">Services</a>
+                          <ul class="sub-menu">
+                              <li><a href="/services/web-development">Web Development</a></li>
+                              <li><a href="/services/custom-software">Custom Software Development</a></li>
+                              <li><a href="/services/mobile-app">Mobile App Development</a></li>
+                              <li><a href="/services/tech-skills-training">Tech Skills Training</a></li>
+                              <li><a href="/services/tech-talent-outsourcing">Tech Talent Outsourcing</a></li>
+                              <li><a href="/services/tech-consulting">Tech Consulting Services</a></li>
+                          </ul>
+                      </li>
+                      <li class="has-sub">
+                          <a href="javascript:void(0)">Training</a>
+                          <ul class="sub-menu">
+                              <li><a href="/training/web-development">Web Development</a></li>
+                              <li><a href="/training/mobile-app">Mobile App Development</a></li>
+                              <li><a href="/training/cyber-security">Cyber Security</a></li>
+                              <li><a href="/training/data-analysis">Data Analysis</a></li>
+                              <li><a href="/training/ui-ux">UI/UX</a></li>
+                          </ul>
+                      </li>
+                      <li class="scroll-to-section"><a href="/portfolio">Portfolio</a></li>
+                      <li class="scroll-to-section"><a href="/contact">Contact Us</a></li>
+                      <li class="scroll-to-section">
+                        <a href="/book-session" 
+                        class="btn btn-primary" 
+                        style="display: flex; justify-content: center; align-items: center; text-align: center; height: 80%;">Book a Session</a>                     
+                      </li>
+                  </ul>        
+                  <a class='menu-trigger'>
+                      <span>Menu</span>
+                  </a>
+                  <!-- ***** Menu End ***** -->
+              </nav>
+          </div>
+      </div>
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->

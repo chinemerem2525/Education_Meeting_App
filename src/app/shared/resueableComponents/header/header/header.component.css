@@ -1,50 +1,90 @@
-.sub-header {
-    background-color: #000; /* Black background */
-    
+.header-area .btn {
+  background-color: #FFD700;
+  color: #000;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
 
+.header-area .btn:hover {
+  background-color: #000;
+  color: #FFD700;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 5px 10px;
+  border: 1px solid #FFD700;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 10px;
+  background-color: #FFD700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+justify-content: center;
+text-align: center;
+align-items: center;
+}
+
+.search-bar button:hover {
+  background-color: #000;
+  color: #FFD700;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+}
+
+.nav.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-trigger {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-trigger span {
+  color: #FFD700;
+  font-size: 20px;
+}
+
+.menu-trigger.active span {
+  color: #FFF;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+      display: none;
   }
-  
- 
-  .sub-header .left-content em {
-    font-style: italic;
-    color: #FFD700; /* White text for emphasis */
+
+  .nav {
+      display: none;
   }
-  .sub-header .right-icons ul li a {
-    color: #FFD700;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  .sub-header .right-icons ul li a:hover {
-    color: #FFF; /* White on hover */
-    transform: scale(1.2); /* Slightly enlarge on hover */
-  }
-  .header-area .logo {
+
+  .menu-trigger {
+      display: block;
    
-    color: #FFF;
-    
-  }
-  .header-area .logo:hover {
-    color: #FFD700; 
-  }
-  .header-area .nav li a {
-    color: #FFF;
-    transition: background-color 0.3s, color 0.3s;
   }
 
-  .header-area .nav li a:hover {
-    
-    color: #000000;
+  .menu-trigger.active + .nav {
+      display: flex;
+      flex-direction: column;
+      background-color: #FFF;
   }
-  .header-area .nav .has-sub > a::after {
-    content: "▼";
-    color: #FFD700;
-  }
-  .header-area .nav .sub-menu li a {
-    color: #FFD700;
-  }
-  .header-area .nav .sub-menu li a:hover {
 
-    color: #000000;
+  .nav li {
+      margin: 10px 0;
   }
-  .header-area .menu-trigger:hover span {
-    color: #000000;
-  }
+}
