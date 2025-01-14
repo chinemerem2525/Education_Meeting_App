@@ -247,7 +247,7 @@ header
 }
 .background-header {
   background-color: #FFD700!important;
-  height: 80px!important;
+  height: 200px !important;
   position: fixed!important;
   top: 0!important;
   left: 0;

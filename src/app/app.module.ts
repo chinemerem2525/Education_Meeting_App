@@ -8,6 +8,7 @@ import { HeaderComponent } from './shared/resueableComponents/header/header/head
 import { HomeComponent } from './pages/home/home/home.component';
 import { MeetingComponent } from './pages/meeting/meeting/meeting.component';
 import { MeetingDetailsComponent } from './pages/meetingDetails/meeting-details/meeting-details.component';
+import { SliderComponent } from './shared/resueableComponents/header/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MeetingDetailsComponent } from './pages/meetingDetails/meeting-details/
     HeaderComponent,
     HomeComponent,
     MeetingComponent,
-    MeetingDetailsComponent
+    MeetingDetailsComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
