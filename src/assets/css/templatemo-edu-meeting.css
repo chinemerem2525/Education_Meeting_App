@@ -698,6 +698,7 @@ banner
     max-height: 100vh;
     object-fit: cover;
     z-index: -1;
+    
 }
 
 #bg-video::-webkit-media-controls {

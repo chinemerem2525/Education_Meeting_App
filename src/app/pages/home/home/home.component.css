@@ -13,6 +13,54 @@ body {
 
 
 
+/* Animated Text */
+.animated-text span {
+  opacity: 0;
+  position: absolute;
+  white-space: nowrap;
+  transform: translateX(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Active State */
+.animated-text span.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* From Left Animation */
+.animated-text span.from-left {
+  transform: translateX(-100%);
+  animation: slide-in-left 0.5s forwards;
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* From Right Animation */
+.animated-text span.from-right {
+  transform: translateX(100%);
+  animation: slide-in-right 0.5s forwards;
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .main-banner .main-button-red a {
   background-color: #FFD700; /* Gold button */
   color: #000; /* Black text */

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, QueryList,Renderer2, ViewChild, ViewChildren } from '@angular/core';
 
 declare var $: any;
 
@@ -7,76 +7,32 @@ declare var $: any;
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements AfterViewInit{
+export class HomeComponent implements AfterViewInit {
+  // Carousel headings and descriptions
+  headings: string[] = [
+    'Hello Innovators!',
+    'Hello Visionaries!',
+    'Hello Creators!',
+    'Hello Dreamers!'
+  ];
 
-  @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>; //Target the video element using a template variable
-  @ViewChildren('body') accordionBodies!: QueryList<ElementRef>; //Targets the accordion using a template variable
-  activeIndex: number | null = null; //Active index of the accordion
+  descriptions: string[] = [
+    `Empowering businesses and individuals with cutting-edge web development, mobile apps, tech skills training, and consulting services. <br> Let’s build your future together.`,
+    `From custom software and mobile apps to tech training and consulting, we deliver solutions tailored to your needs. Discover the technology that transforms.`,
+    `We build websites, apps, and custom solutions while training tomorrow's tech leaders. Let’s innovate, learn, and grow together!`,
+    `Your partner in web development, tech training, and IT consulting. Transforming ideas into impactful digital solutions—let’s make it happen!`
+  ];
 
-  constructor(private renderer: Renderer2) {}
+  currentHeading: string = this.headings[0];
+  currentDescription: string = this.descriptions[0];
+  currentIndex: number = 0;
+  intervalId!: any;
 
+  // Template references
+  @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChildren('body') accordionBodies!: QueryList<ElementRef>;
 
-  ngAfterViewInit() {
-    $('.owl-courses-item').owlCarousel({
-      autoplay: true,
-      loop: true,
-      margin: 10,
-      nav: true,
-      height: 20,
-      responsive: {
-        0: { items: 1 },
-        600: { items: 2 },
-        1000: { items: 3 }
-      }
-    });
-
-    $('.owl-service-item').owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      nav: false,
-      dots: true,
-      margin: 20,
-      responsive: {
-        0: { items: 1 },
-        600: { items: 2 },
-        1000: { items: 3 }
-      }
-    });
-
-    
-
-    const video = this.bgVideo.nativeElement;
-
-    // Ensure the video plays on initialization
-    setTimeout(() => {
-      video.play().catch((error) => {
-        console.error('Autoplay failed. Attempting to resolve:', error);
-        // Optional: handle error, e.g., show a play button for user interaction
-      });
-    }, 100); // Adding a slight delay to ensure the video element is initialized
-
-  }
-
-  // const video = this.bgVideo.nativeElement;
-
-  //   // Attempt to play immediately if autoplay is allowed
-  //   video.play().catch((error) => {
-  //     console.error('Autoplay failed. Attempting to resolve:', error);
-
-  //     // Add a click event listener to the document to resume playback on user interaction
-  //     this.renderer.listen('document', 'click', () => {
-  //       video.play().then(() => {
-  //         console.log('Video started playing after user interaction');
-  //       }).catch(err => {
-  //         console.error('Error playing the video after user interaction:', err);
-  //       });
-  //     });
-  //   });
- 
-// Array of objects that stores the content of the accordion
+  activeIndex: number | null = null; // For active accordion item
   accordions = [
     {
       title: 'About Edu Meeting HTML Template',
@@ -100,10 +56,77 @@ export class HomeComponent implements AfterViewInit{
     }
   ];
 
-  openIndex: number | null = null;
+  openIndex: number | null = null; // Open accordion index
+
+  constructor(private renderer: Renderer2) {}
+
+  ngOnInit(): void {
+    this.startAnimation();
+  }
+
+  ngAfterViewInit(): void {
+    // Initialize carousels
+    $('.owl-courses-item').owlCarousel({
+      autoplay: true,
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: { items: 1 },
+        600: { items: 2 },
+        1000: { items: 3 }
+      }
+    });
+
+    $('.owl-service-item').owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true,
+      nav: false,
+      dots: true,
+      margin: 20,
+      responsive: {
+        0: { items: 1 },
+        600: { items: 2 },
+        1000: { items: 3 }
+      }
+    });
+
+    // Play the background video
+    const video = this.bgVideo.nativeElement;
+    video.play().catch((error) => {
+      console.error('Autoplay failed. Attempting to resolve:', error);
+
+      // Add a click listener to play video on user interaction
+      this.renderer.listen('document', 'click', () => {
+        video.play().then(() => {
+          console.log('Video started playing after user interaction');
+        }).catch(err => {
+          console.error('Error playing the video after user interaction:', err);
+        });
+      });
+    });
+  }
+
+  ngOnDestroy(): void {
+    // Clear interval for heading animation
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  startAnimation(): void {
+    this.intervalId = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.headings.length;
+      this.currentHeading = this.headings[this.currentIndex];
+      this.currentDescription = this.descriptions[this.currentIndex];
+    }, 4000); // Change every 4 seconds
+  }
 
   toggleAccordion(index: number): void {
-    // Toggle the accordion. If it's already open, close it; otherwise, open it.
+    // Toggle accordion open state
     this.openIndex = this.openIndex === index ? null : index;
   }
 }
