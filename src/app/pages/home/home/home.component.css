@@ -240,3 +240,133 @@ a:hover {
   color: #333;
   margin-bottom: 15px;
 }
+/* General animation styles */
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes jumpIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animations with staggered delays */
+.animfadebg {
+  animation: slideFromLeft 1s ease-in-out forwards;
+}
+
+.taglineintro {
+  animation: jumpIn 1.5s ease-in-out forwards;
+  animation-delay: 0.5s; /* Delay to ensure staggered effect */
+}
+
+.left-content {
+  animation: slideFromTop 1.5s ease-out forwards;
+  animation-delay: 1s;
+}
+/* Keyframe animations for sliding effects */
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Applying animations with staggered delays */
+.anim-slide-left {
+  animation: slideFromLeft 1.5s ease-in-out forwards;
+}
+
+.anim-slide-right {
+  animation: slideFromRight 1.5s ease-in-out forwards;
+}
+
+.anim-slide-top {
+  animation: slideFromTop 1.5s ease-in-out forwards;
+}
+
+.anim-slide-bottom {
+  animation: slideFromBottom 1.5s ease-in-out forwards;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation class for the sliding paragraph */
+.anim-slide-top {
+  display: inline-block;
+  animation: slideIn 0.3s ease-out; /* Adjust duration as needed */
+  font-size: 1rem; /* Optional: Adjust text styling */
+}
+

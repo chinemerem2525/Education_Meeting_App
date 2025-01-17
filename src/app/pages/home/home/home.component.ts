@@ -24,9 +24,11 @@ export class HomeComponent implements AfterViewInit {
   ];
 
   currentHeading: string = this.headings[0];
-  currentDescription: string = this.descriptions[0];
+  currentDescription: string = '';
   currentIndex: number = 0;
   intervalId!: any;
+  displayedDescription: string = ''; // For dynamically showing sliding description
+  wordIndex: number = 0;
 
   // Template references
   @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
@@ -97,14 +99,12 @@ export class HomeComponent implements AfterViewInit {
     // Play the background video
     const video = this.bgVideo.nativeElement;
     video.play().catch((error) => {
-      console.error('Autoplay failed. Attempting to resolve:', error);
+      console.error('Autoplay failed:', error);
 
-      // Add a click listener to play video on user interaction
+      // Add click listener to play video on user interaction
       this.renderer.listen('document', 'click', () => {
-        video.play().then(() => {
-          console.log('Video started playing after user interaction');
-        }).catch(err => {
-          console.error('Error playing the video after user interaction:', err);
+        video.play().catch((err) => {
+          console.error('Error playing video after user interaction:', err);
         });
       });
     });
@@ -119,10 +119,24 @@ export class HomeComponent implements AfterViewInit {
 
   startAnimation(): void {
     this.intervalId = setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.headings.length;
+      this.currentIndex = (this.currentIndex + 1) % this.headings.length; // Cycle through headings and descriptions
       this.currentHeading = this.headings[this.currentIndex];
-      this.currentDescription = this.descriptions[this.currentIndex];
-    }, 4000); // Change every 4 seconds
+      this.startSlidingDescription(this.descriptions[this.currentIndex]);
+    }, 4000); // Update every 5 seconds
+  }
+  startSlidingDescription(description: string): void {
+    const words = description.split(' '); // Break description into words
+    this.displayedDescription = ''; // Clear the previous description
+    this.wordIndex = 0; // Reset word index
+
+    const wordInterval = setInterval(() => {
+      if (this.wordIndex < words.length) {
+        this.displayedDescription += words[this.wordIndex] + ' ';
+        this.wordIndex++;
+      } else {
+        clearInterval(wordInterval); // Stop once all words are displayed
+      }
+    }, 200); // Add a word every 200ms
   }
 
   toggleAccordion(index: number): void {

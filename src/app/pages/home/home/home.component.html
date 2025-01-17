@@ -12,92 +12,133 @@
     <source src="assets/images/morrhtechVideo.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
+
+  <div class="video-overlay header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="caption">
+            <!-- Slide from Left -->
+            <h6 class="anim-slide-left" data-time="0">{{ currentHeading }}</h6>
   
-    <div class="video-overlay header-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="caption">
-              <h6 class="animated-text">{{ currentHeading }}</h6>
-              <h2>Welcome to Morrhtech Solutions</h2>
-              <p [innerHTML]="currentDescription" class="animated-text"></p>
-              <br>
-              <div class="main-button-red">
-                <div class="scroll-to-section">
-                  <a href="/services">Get started</a>
-                </div>
+            <!-- Slide from Right -->
+            <h2 class="anim-slide-right" data-time="3400">
+              Welcome to Morrhtech Solutions
+            </h2>
+  
+            <!-- Slide from Top -->
+            <p [innerHTML]="displayedDescription" class="anim-slide-top"></p>
+            <br />
+  
+            <!-- Slide from Bottom -->
+            <div class="main-button-red anim-slide-bottom">
+              <div class="scroll-to-section">
+                <a href="/services">Get started</a>
               </div>
-              
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  
+  
+  
   </section>
   
 <!-- ***** Main Banner Area End ***** -->
-
 <section class="services">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="owl-service-item owl-carousel">
-        
-          <div class="item" >
-            <div class="icon">
-              <img src="../../../../assets/images/service-icon-01.png" alt="">
-            </div>
-            <div class="down-content">
-              <h4>Best Education</h4>
-              <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-            </div>
-          </div>
-          
+
+          <!-- Custom Web Development -->
           <div class="item">
             <div class="icon">
-              <img src="../../../../assets/images/service-icon-02.png" alt="">
+              <i class="fas fa-laptop-code"></i>
             </div>
             <div class="down-content">
-              <h4>Best Teachers</h4>
-              <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+              <h4 class="taglineintro animfadeIn" data-time="2200">Custom Web Development</h4>
+              <p>Build a dynamic online presence with our expertly crafted websites tailored to your business needs.</p>
+              <div class="main-button-red">
+                <div class="scroll-to-section">
+              <a href="#custom-web-development" class="cta-button">Learn More</a>
             </div>
           </div>
-          
+            </div>
+          </div>
+
+          <!-- Mobile App Development -->
           <div class="item">
             <div class="icon">
-              <img src="../../../../assets/images/service-icon-03.png" alt="">
+              <i class="fas fa-mobile-alt"></i> 
             </div>
             <div class="down-content">
-              <h4>Best Students</h4>
-              <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+              <h4>Mobile App Development</h4>
+              <p>Deliver seamless experiences with custom mobile apps designed for Android and iOS platforms.</p>
+              <div class="main-button-red">
+                <div class="scroll-to-section">
+              <a href="#mobile-app-development" class="cta-button">Explore Services</a>
             </div>
           </div>
-          
+            </div>
+          </div>
+
+          <!-- IT Staffing & Recruitment -->
           <div class="item">
             <div class="icon">
-              <img src="../../../../assets/images/service-icon-02.png" alt="">
+              <i class="fas fa-users"></i>
             </div>
             <div class="down-content">
-              <h4>Online Meeting</h4>
-              <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+              <h4>IT Staffing & Recruitment</h4>
+              <p>Find the right talent for your IT needs with our specialized recruitment and staffing solutions.</p>
+              <div class="main-button-red">
+                <div class="scroll-to-section">
+              <a href="#it-staffing" class="cta-button">Hire Talent</a>
             </div>
           </div>
-          
+            </div>
+          </div>
+
+          <!-- IT Consulting & Strategy -->
           <div class="item">
             <div class="icon">
-              <img src="../../../../assets/images/service-icon-03.png" alt="">
+              <i class="fas fa-lightbulb"></i>
             </div>
             <div class="down-content">
-              <h4>Best Networking</h4>
-              <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+              <h4>IT Consulting & Strategy</h4>
+              <p>Drive innovation and efficiency with our expert IT consulting services tailored to your goals.</p>
+              <div class="main-button-red">
+                <div class="scroll-to-section">
+              <a href="#it-consulting" class="cta-button">Get Started</a>
             </div>
           </div>
-          
+            </div>
+          </div>
+
+          <!-- Training & Upskilling -->
+          <div class="item">
+            <div class="icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="down-content">
+              <h4>Training & Upskilling</h4>
+              <p>Empower yourself or your team with hands-on training in web development, cybersecurity, data analysis, and more.</p>
+              <div class="main-button-red">
+                <div class="scroll-to-section">
+              <a href="#training-upskilling" class="cta-button">View Courses</a>
+            </div>
+          </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="upcoming-meetings" id="meetings">
   <div class="container">

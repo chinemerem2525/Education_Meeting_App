@@ -246,8 +246,7 @@ header
    color: #FFD700;
 }
 .background-header {
-  background-color: #FFD700!important;
-  height: 200px !important;
+  background-color:  #f5f5f5!important;
   position: fixed!important;
   top: 0!important;
   left: 0;
@@ -258,11 +257,15 @@ header
 .background-header .main-nav .nav li a {
   color: #1e1e1e!important;
 }
+.background-header .main-nav .nav li a:hover {
+  color: #FFD700!important;
+}
 
 .background-header .logo,
 .background-header .main-nav .nav li a {
-  color: #1e1e1e!important;
+  color:#1e1e1e !important;
 }
+
 
 .background-header .main-nav .nav li:hover a {
   color: #fff!important;
@@ -357,7 +360,7 @@ header
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-  color: #000000!important;
+  color: #FFD700!important;
   opacity: 1;
 }
 
@@ -382,7 +385,19 @@ header
 
 .header-area .main-nav .nav li.has-sub ul.sub-menu {
   position: absolute;
-  width: 200px;
+  width: 250px;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  top: 40px;
+  opacity: 0;
+  transition: all .3s;
+  transform: translateY(+2em);
+  visibility: hidden;
+  z-index: -1;
+}
+.header-area .main-nav .nav li.has-sub ul.sub-menu:hover{
+  position: absolute;
+  width: 550px;
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
   overflow: hidden;
   top: 40px;
@@ -433,6 +448,44 @@ header
   z-index: 1;
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.3s;
+}
+
+/* Responsive Dropdown Menu for Mobile Devices */
+@media (max-width: 768px) {
+  .header-area .main-nav {
+      display: block;
+  }
+
+  .header-area .main-nav .nav {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .header-area .main-nav .nav li {
+      position: relative;
+  }
+
+  .header-area .main-nav .nav li.has-sub ul.sub-menu {
+      position: static;
+      width: 100%; /* Adjust width for mobile screens */
+      transform: translateY(0); /* Reset transform for mobile */
+      visibility: hidden;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+  }
+
+  .header-area .main-nav .nav li.has-sub.open ul.sub-menu {
+      visibility: visible;
+      opacity: 1;
+      max-height: 500px; /* Adjust height for dropdown expansion */
+  }
+
+  .header-area .main-nav .nav li.has-sub ul.sub-menu li a {
+      padding-left: 20px;
+      font-size: 16px;
+  }
 }
 
 .header-area .main-nav .menu-trigger {
