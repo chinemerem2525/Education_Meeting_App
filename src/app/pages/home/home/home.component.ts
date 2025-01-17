@@ -122,7 +122,7 @@ export class HomeComponent implements AfterViewInit {
       this.currentIndex = (this.currentIndex + 1) % this.headings.length; // Cycle through headings and descriptions
       this.currentHeading = this.headings[this.currentIndex];
       this.startSlidingDescription(this.descriptions[this.currentIndex]);
-    }, 4000); // Update every 5 seconds
+    }, 4000); // Update every 6seconds
   }
   startSlidingDescription(description: string): void {
     const words = description.split(' '); // Break description into words

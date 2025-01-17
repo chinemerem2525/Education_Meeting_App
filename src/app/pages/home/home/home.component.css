@@ -19,7 +19,7 @@ body {
   position: absolute;
   white-space: nowrap;
   transform: translateX(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 1.5s ease;
 }
 
 /* Active State */
@@ -31,7 +31,7 @@ body {
 /* From Left Animation */
 .animated-text span.from-left {
   transform: translateX(-100%);
-  animation: slide-in-left 0.5s forwards;
+  animation: slide-in-left 1.5s forwards;
 }
 
 @keyframes slide-in-left {
@@ -48,7 +48,7 @@ body {
 /* From Right Animation */
 .animated-text span.from-right {
   transform: translateX(100%);
-  animation: slide-in-right 0.5s forwards;
+  animation: slide-in-right 1.5s forwards;
 }
 
 @keyframes slide-in-right {
@@ -66,7 +66,7 @@ body {
   color: #000; /* Black text */
   padding: 10px 20px;
   border-radius: 25px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 1.3s ease;
 }
 
 .main-banner .main-button-red a:hover {
@@ -338,19 +338,19 @@ a:hover {
 
 /* Applying animations with staggered delays */
 .anim-slide-left {
-  animation: slideFromLeft 1.5s ease-in-out forwards;
+  animation: slideFromLeft 3.0s ease-in-out forwards;
 }
 
 .anim-slide-right {
-  animation: slideFromRight 1.5s ease-in-out forwards;
+  animation: slideFromRight 3.0s ease-in-out forwards;
 }
 
 .anim-slide-top {
-  animation: slideFromTop 1.5s ease-in-out forwards;
+  animation: slideFromTop 3.0s ease-in-out forwards;
 }
 
 .anim-slide-bottom {
-  animation: slideFromBottom 1.5s ease-in-out forwards;
+  animation: slideFromBottom 3.0s ease-in-out forwards;
 }
 @keyframes slideIn {
   0% {
@@ -370,3 +370,13 @@ a:hover {
   font-size: 1rem; /* Optional: Adjust text styling */
 }
 
+.services .icon i {
+  font-size: 2.5rem; /* Increase size */
+  font-weight: bold; /* Make it bold */
+  color: #FFD700; /* Optional: Add color for better visibility */
+  margin-bottom: 10px; /* Add spacing below the icon */
+}
+
+.height{
+  height: 100px;
+}
