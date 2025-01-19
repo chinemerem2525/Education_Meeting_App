@@ -387,4 +387,24 @@ a:hover {
 
 .down-content{
   height: 200px;
+  text-align: center; /* Centers the header and other text */
+    padding: 20px; /* Adds space inside the card */
+}
+
+.down-content p {
+  margin: 12px 0; /* Ensures equal margin above and below each paragraph */
+  font-size: 16px; /* Adjusts paragraph text size */
+  line-height: 1.2; /* Improves readability */
+  color: #000; /* Sets a lighter color for the text */
+}
+
+.down-content a h4 {
+  text-decoration: none;
+  transition: color 0.3s ease; /* Adds a smooth hover effect */
+}
+
+
+.categories ul li {
+  display: block; /* Ensures each list item appears on a new line */
+  margin-bottom: 8px; /* Optional: Adds space between list items for better readability */
 }
