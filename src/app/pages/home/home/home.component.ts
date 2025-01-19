@@ -37,24 +37,24 @@ export class HomeComponent implements AfterViewInit {
   activeIndex: number | null = null; // For active accordion item
   accordions = [
     {
-      title: 'About Edu Meeting HTML Template',
+      title: 'About Morrhtech Solutions',
       content:
-        'If you want to get the latest collection of HTML CSS templates for your websites, you may visit Too CSS website. If you need a working contact form script, please visit our contact page for more info.'
+        'Discover innovative IT solutions with Morrhtech Solutions. We specialize in web development, mobile app development, IT consulting, and training on in-demand tech skills. Empower your business with our expertise.'
     },
     {
-      title: 'HTML CSS Bootstrap Layout',
+      title: 'Full-Stack Development Training',
       content:
-        'Etiam posuere metus orci, vel consectetur elit imperdiet eu. Cras ipsum magna, maximus at semper sit amet, eleifend eget neque. Nunc facilisis quam purus, sed vulputate augue interdum vitae.'
+        'Master both frontend and backend technologies in our comprehensive Full-Stack Development course. Learn frameworks like Angular and Node.js, and build real-world projects to enhance your portfolio.'
     },
     {
-      title: 'Please tell your friends',
+      title: 'Empower Your Network',
       content:
-        'Ut vehicula mauris est, sed sodales justo rhoncus eu. Morbi porttitor quam velit, at ullamcorper justo suscipit sit amet.'
+        'Spread the word about Morrhtech Solutions. Help others unlock their potential in tech by sharing our training and consulting services with your friends and colleagues.'
     },
     {
-      title: 'Share this to your colleagues',
+      title: 'Share Our Expertise',
       content:
-        'Maecenas suscipit enim libero, vel lobortis justo condimentum id. Interdum et malesuada fames ac ante ipsum primis in faucibus.'
+        'Let your colleagues know about Morrhtech Solutions’ offerings. From custom software development to IT staffing and recruitment, we have the right solutions for your business needs.'
     }
   ];
 

@@ -1080,7 +1080,7 @@ apply now
 */
 
 section.apply-now {
-  background-image: url(../images/apply-bg.jpg);
+  background-image: url(../images/tech2.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -1164,7 +1164,7 @@ courses
 */
 
 section.our-courses {
-  background-image: url(../images/meetings-bg.jpg);
+  background-image: url(../images/tech3.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -1183,6 +1183,12 @@ section.our-courses {
   color: #1f272b;
   text-align: center; 
   border-bottom: 1px solid #eee;
+}
+.our-courses .item .down-content p {
+ 
+  color: #1f272b;
+  text-align: center; 
+  
 }
 
 .our-courses .item .down-content .info {
