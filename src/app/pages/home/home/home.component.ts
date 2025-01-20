@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, ElementRef, QueryList,Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  Renderer2,
+  ViewChild,
+  ViewChildren
+} from '@angular/core';
 
 declare var $: any;
 
@@ -27,6 +35,7 @@ export class HomeComponent implements AfterViewInit {
   currentDescription: string = '';
   currentIndex: number = 0;
   intervalId!: any;
+  imageIntervalId!: any; // New interval ID for image slideshow
   displayedDescription: string = ''; // For dynamically showing sliding description
   wordIndex: number = 0;
 
@@ -63,11 +72,11 @@ export class HomeComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
-    this.startAnimation();
+    this.startTextAnimation();
+    this.startImageSlideshow(); // Start the image slideshow
   }
 
   ngAfterViewInit(): void {
-    // Initialize carousels
     $('.owl-courses-item').owlCarousel({
       autoplay: true,
       loop: true,
@@ -96,12 +105,10 @@ export class HomeComponent implements AfterViewInit {
       }
     });
 
-    // Play the background video
     const video = this.bgVideo.nativeElement;
     video.play().catch((error) => {
       console.error('Autoplay failed:', error);
 
-      // Add click listener to play video on user interaction
       this.renderer.listen('document', 'click', () => {
         video.play().catch((err) => {
           console.error('Error playing video after user interaction:', err);
@@ -111,19 +118,28 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngOnDestroy(): void {
-    // Clear interval for heading animation
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }
+    if (this.imageIntervalId) {
+      clearInterval(this.imageIntervalId); // Clear image slideshow interval
+    }
   }
 
-  startAnimation(): void {
+  startTextAnimation(): void {
     this.intervalId = setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.headings.length; // Cycle through headings and descriptions
       this.currentHeading = this.headings[this.currentIndex];
       this.startSlidingDescription(this.descriptions[this.currentIndex]);
-    }, 4000); // Update every 6seconds
+    }, 4000); // Update every 4 seconds
   }
+
+  startImageSlideshow(): void {
+    this.imageIntervalId = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.headings.length; // Cycle through images independently
+    }, 6000); // Change image every 6 seconds
+  }
+
   startSlidingDescription(description: string): void {
     const words = description.split(' '); // Break description into words
     this.displayedDescription = ''; // Clear the previous description
@@ -140,7 +156,6 @@ export class HomeComponent implements AfterViewInit {
   }
 
   toggleAccordion(index: number): void {
-    // Toggle accordion open state
     this.openIndex = this.openIndex === index ? null : index;
   }
 }
