@@ -131,13 +131,13 @@ export class HomeComponent implements AfterViewInit {
       this.currentIndex = (this.currentIndex + 1) % this.headings.length; // Cycle through headings and descriptions
       this.currentHeading = this.headings[this.currentIndex];
       this.startSlidingDescription(this.descriptions[this.currentIndex]);
-    }, 4000); // Update every 4 seconds
+    }, 8000); // Update every 4seconds
   }
 
   startImageSlideshow(): void {
-    this.imageIntervalId = setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.headings.length; // Cycle through images independently
-    }, 6000); // Change image every 6 seconds
+    setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.headings.length; // Loop through images
+    }, 8000); // Change image every 3 seconds
   }
 
   startSlidingDescription(description: string): void {
@@ -152,7 +152,7 @@ export class HomeComponent implements AfterViewInit {
       } else {
         clearInterval(wordInterval); // Stop once all words are displayed
       }
-    }, 200); // Add a word every 200ms
+    }, 330); // Add a word every 200ms
   }
 
   toggleAccordion(index: number): void {

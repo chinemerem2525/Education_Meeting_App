@@ -172,7 +172,7 @@ a:hover {
 }
 
 .owl-carousel .item .down-content{
-  height: 160px !important;
+  height: 200px !important;
 }
 .owl-carousel .item{
   width: 400px;
@@ -450,4 +450,13 @@ a:hover {
   width: 100%;
   height: 700px; /* Adjust based on your design */
   overflow: hidden;
+}
+.caption h6 {
+  font-size: 30px;
+}
+.caption h2 {
+  font-size: 50px;
+}
+.caption p {
+  font-size: 20px;
 }
