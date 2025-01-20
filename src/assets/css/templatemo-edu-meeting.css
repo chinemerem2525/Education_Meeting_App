@@ -1525,7 +1525,7 @@ heading page
 */
 
 section.heading-page {
-  background-image: url(../images/heading-bg.jpg);
+  background-image: url(../images/about_background2.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1717,16 +1717,16 @@ section.meetings-page .pagination ul li a:hover {
 .meeting-single-item .down-content p.description {
   margin-top: 40px;
   padding-top: 40px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #000;
   margin-bottom: 40px;
   padding-bottom: 40px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #000;
 }
 
 .meeting-single-item .down-content .share {
   margin-top: 40px;
   padding-top: 40px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #000;
 }
 
 .meeting-single-item .down-content .share h5 {
