@@ -63,7 +63,7 @@ export class HomeComponent implements AfterViewInit {
     {
       title: 'Share Our Expertise',
       content:
-        'Let your colleagues know about Morrhtech Solutions’ offerings. From custom software development to IT staffing and recruitment, we have the right solutions for your business needs.'
+        'Let your colleagues know about Morrhtech Solutions’ offerings. From custom software development to IT staffing and recruitment, we have the right solutions for your business needs.'
     }
   ];
 
@@ -77,6 +77,7 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    // Initialize carousels
     $('.owl-courses-item').owlCarousel({
       autoplay: true,
       loop: true,
@@ -106,14 +107,19 @@ export class HomeComponent implements AfterViewInit {
     });
 
     const video = this.bgVideo.nativeElement;
-    video.play().catch((error) => {
-      console.error('Autoplay failed:', error);
 
-      this.renderer.listen('document', 'click', () => {
-        video.play().catch((err) => {
-          console.error('Error playing video after user interaction:', err);
-        });
-      });
+    // Toggle play/pause on video click
+    this.renderer.listen(video, 'click', () => {
+      if (video.paused) {
+        video.play().catch((err) => console.error('Error playing video:', err));
+      } else {
+        video.pause();
+      }
+    });
+
+    // Attempt autoplay
+    video.play().catch((error) => {
+      console.warn('Autoplay blocked. Waiting for user interaction.');
     });
   }
 
@@ -131,13 +137,13 @@ export class HomeComponent implements AfterViewInit {
       this.currentIndex = (this.currentIndex + 1) % this.headings.length; // Cycle through headings and descriptions
       this.currentHeading = this.headings[this.currentIndex];
       this.startSlidingDescription(this.descriptions[this.currentIndex]);
-    }, 8000); // Update every 4seconds
+    }, 8000); // Update every 8 seconds
   }
 
   startImageSlideshow(): void {
-    setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.headings.length; // Loop through images
-    }, 8000); // Change image every 3 seconds
+    this.imageIntervalId = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 6) % this.headings.length; // Loop through images
+    }, 8000); // Change image every 8 seconds
   }
 
   startSlidingDescription(description: string): void {
@@ -152,7 +158,7 @@ export class HomeComponent implements AfterViewInit {
       } else {
         clearInterval(wordInterval); // Stop once all words are displayed
       }
-    }, 330); // Add a word every 200ms
+    }, 330); // Add a word every 330ms
   }
 
   toggleAccordion(index: number): void {

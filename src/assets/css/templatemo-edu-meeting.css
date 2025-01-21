@@ -200,6 +200,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
+  margin-top: 20px;
 }
 
 
@@ -951,7 +952,6 @@ section.upcoming-meetings {
   background-size: cover;
   padding-top: 230px;
   padding-bottom: 110px;
-  margin-top: 30px;
 }
 
 section.upcoming-meetings .section-heading {
