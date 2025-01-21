@@ -105,7 +105,8 @@ body {
   color: #FFD700; /* Gold text */
   border: 1px solid #FFD700; /* Gold border */
   border-radius: 5px;
-  margin-right: 20%;
+  padding-left: 50px ;
+  
 }
 
 .owl-carousel .item .down-content {
@@ -377,9 +378,12 @@ a:hover {
   color: #FFD700; /* Optional: Add color for better visibility */
   margin-bottom: 10px; /* Add spacing below the icon */
 }
-
+.services{
+  margin-bottom: 30px;
+}
 .height{
   height: 100px;
+  width: 280px;
 }
 
 .thumb img{
@@ -387,7 +391,7 @@ a:hover {
 }
 
 .down-content{
-  height: 200px;
+  height: 250px;
 }
 
 .our-courses img {
@@ -441,7 +445,7 @@ a:hover {
 }
 .image-container img {
   width: 100%;
-  height: auto;
+  height: 700px;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
@@ -460,3 +464,51 @@ a:hover {
 .caption p {
   font-size: 20px;
 }
+
+
+/* Adjusting for Mobile Devices */
+@media (max-width: 768px) {
+  /* Adjusting heading sizes */
+  .main-banner .caption h2 {
+    font-size: 2rem; /* Smaller heading for smaller screens */
+    line-height: 1.4;
+  }
+
+  .main-banner .caption h6 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .main-banner .caption p {
+    font-size: 1rem; /* Smaller text for better readability */
+    margin: 10px 0;
+  }
+
+  /* Button adjustments */
+  .main-banner .main-button-red a {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .main-banner .caption h2 {
+    font-size: 1.8rem;
+  }
+
+  .main-banner .caption h6 {
+    font-size: 1rem;
+  }
+
+  .main-banner .caption p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .main-banner .main-button-red a {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
+

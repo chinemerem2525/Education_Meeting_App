@@ -951,6 +951,7 @@ section.upcoming-meetings {
   background-size: cover;
   padding-top: 230px;
   padding-bottom: 110px;
+  margin-top: 30px;
 }
 
 section.upcoming-meetings .section-heading {
@@ -1066,9 +1067,10 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content p {
-  margin-left: 50px;
+  margin-left: 30px;
   color: #1f272b;
   font-size: 14px;
+  
 }
 
 
@@ -1539,7 +1541,7 @@ section.heading-page h6 {
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 600;
-  color: #fff;
+  color: #FFD700;
   letter-spacing: 1px;
 }
 
@@ -1549,7 +1551,7 @@ section.heading-page h2 {
   font-size: 36px;
   text-transform: uppercase;
   font-weight: 800;
-  color: #fff;
+  color: #FFD700;
   letter-spacing: 1px;
 }
 
