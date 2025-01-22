@@ -12,10 +12,6 @@
   color: #FFD700;
 }
 
-
-
-
-
 .nav {
   display: flex;
   list-style: none;
@@ -51,7 +47,7 @@
 
   .menu-trigger {
       display: block;
-   
+
   }
 
   .menu-trigger.active + .nav {
@@ -65,9 +61,6 @@
   }
 }
 
-
-
-
 /* Base styles for the main menu */
 .has-sub {
   position: relative;
@@ -78,16 +71,14 @@
 .has-sub > a {
   text-decoration: none;
   color: #333;
- 
   display: block;
- 
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .has-sub > a:hover {
-  background-color: #e9ecef;
+
 }
 
 /* Styles for dropdown menu */
@@ -96,18 +87,29 @@
   top: 100%;
   left: 0;
   display: none;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: none;
   z-index: 1000;
   padding: 10px 0;
   list-style: none;
-  min-width: 300px;
-  
+  min-width: 250px;
+
+}
+
+  /* Dropdown menu styles */
+  .sub-menu {
+    display: none;
+}
+
+.has-sub:hover > .sub-menu {
+    display: block;
+}
+
+.sub-menu .has-sub:hover > .sub-menu {
+    display: block;
 }
 
 .sub-menu li {
-  position: relative;
+
 }
 
 .sub-menu li a {
@@ -117,27 +119,48 @@
   padding: 10px 20px;
   white-space: nowrap;
   transition: background-color 0.3s ease;
+
+}
+
+.items {
+  top: -20px;
+}
+
+.items li a {
+  background-color: #f1f1f1;
+  width: 320px;
+}
+
+.items li a:hover {
+  background-color: #000;
+  color: #FFD700;
 }
 
 .sub-menu li a:hover {
-  background-color: #f1f1f1;
+  background-color: #000;
+  color: #FFD700;
+}
+
+.sub-menu > .has-sub > .sub-menu li a:hover {
+  background-color: #000;
+  color: #FFD700;
 }
 
 /* Nested submenu */
-.sub-menu .has-sub {
-  position: relative;
+.sub-menu > li {
+  width: 250px;
 }
 
 .sub-menu .has-sub > a:after {
-  content: '\25B6'; /* Right arrow */
   float: right;
   margin-left: 10px;
 }
 
 .sub-menu .has-sub .sub-menu {
-  top: 0;
+  top: -10px;
   left: 100%;
   display: none;
+  width: 320px;
 }
 
 /* Show dropdown on hover */
@@ -147,6 +170,7 @@
 
 .sub-menu .has-sub:hover > .sub-menu {
   display: block;
+  top: -10px;
 }
 
 /* Additional styling */
@@ -168,5 +192,57 @@
 
 
 
+.hidden {
+  display: none;
+}
+.mobile-menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  height: 100vh;
+  display: none;
+}
 
+@media (max-width: 766px){
+  .mobile-menu
+  {
+    display: block;
+  }
+  .mobile-menu.show {
+    transform: translateX(0);
+  }
+}
+
+.mobile-nav
+{
+  background-color: white;
+  height: 600px;
+  width: 300px;
+  padding: 10px;
+  justify-content: left;
+  text-align: left;
+}
+
+.mobile-nav li a {
+  line-height: 40px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.menu-trigger {
+  display: none;
+}
+@media (max-width: 768px) {
+  .main-nav {
+      display: none;
+  }
+  .menu-trigger {
+      display: block;
+  }
+  .mobile-nav {
+      display: none;
+  }
+  .mobile-nav.active {
+      display: block;
+  }
+}
 

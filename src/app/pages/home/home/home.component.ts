@@ -121,6 +121,9 @@ export class HomeComponent implements AfterViewInit {
     video.play().catch((error) => {
       console.warn('Autoplay blocked. Waiting for user interaction.');
     });
+
+    // Trigger card animations
+    this.initializeCardAnimations();
   }
 
   ngOnDestroy(): void {
@@ -163,5 +166,24 @@ export class HomeComponent implements AfterViewInit {
 
   toggleAccordion(index: number): void {
     this.openIndex = this.openIndex === index ? null : index;
+  }
+
+  private initializeCardAnimations(): void {
+    const cards = document.querySelectorAll('.meeting-item');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show'); // Add 'show' class when in view
+          } else {
+            entry.target.classList.remove('show'); // Remove class when out of view
+          }
+        });
+      },
+      { threshold: 0.2 } // Trigger when 20% of the card is visible
+    );
+
+    cards.forEach((card) => observer.observe(card));
   }
 }
