@@ -161,6 +161,7 @@
   left: 100%;
   display: none;
   width: 320px;
+  height: 700px;
 }
 
 /* Show dropdown on hover */
@@ -195,17 +196,20 @@
 .hidden {
   display: none;
 }
+.block {
+  display: block;
+}
+
 .mobile-menu {
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
+
   height: 100vh;
-  display: none;
+  margin-top: 30px;
 }
 
 @media (max-width: 766px){
   .mobile-menu
   {
-    display: block;
+    display: none
   }
   .mobile-menu.show {
     transform: translateX(0);
@@ -220,12 +224,14 @@
   padding: 10px;
   justify-content: left;
   text-align: left;
+  margin-top: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .mobile-nav li a {
-  line-height: 40px;
+  line-height: 30px;
   color: black;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .menu-trigger {
@@ -239,7 +245,7 @@
       display: block;
   }
   .mobile-nav {
-      display: none;
+      display: block;
   }
   .mobile-nav.active {
       display: block;
