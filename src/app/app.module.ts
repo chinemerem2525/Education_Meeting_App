@@ -12,7 +12,7 @@ import { SliderComponent } from './shared/resueableComponents/header/slider/slid
 import { ContactComponent } from './pages/contact/contact.component';
 import { CustomSoftwareDevelopmentComponent } from './pages/services/softwareDevelopment/customSoftwareDevelopment/custom-software-development/custom-software-development.component';
 import { MobileAppDevelopmentComponent } from './pages/services/softwareDevelopment/mobileAppDevelopment/mobile-app-development/mobile-app-development.component';
-import { WebDevelopmentComponent } from './pages/services/softwareDevelopment/webDevelopment/web-development/web-development.component';
+import { WebDevelopmentComponent } from './pages/services/softwareDevelopment/webDev/web-development/web-development.component';
 
 @NgModule({
   declarations: [
