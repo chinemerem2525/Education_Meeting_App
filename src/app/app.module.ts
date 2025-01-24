@@ -10,6 +10,9 @@ import { MeetingComponent } from './pages/meeting/meeting/meeting.component';
 import { MeetingDetailsComponent } from './pages/meetingDetails/meeting-details/meeting-details.component';
 import { SliderComponent } from './shared/resueableComponents/header/slider/slider.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { CustomSoftwareDevelopmentComponent } from './pages/services/softwareDevelopment/customSoftwareDevelopment/custom-software-development/custom-software-development.component';
+import { MobileAppDevelopmentComponent } from './pages/services/softwareDevelopment/mobileAppDevelopment/mobile-app-development/mobile-app-development.component';
+import { WebDevelopmentComponent } from './pages/services/softwareDevelopment/webDevelopment/web-development/web-development.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ContactComponent } from './pages/contact/contact.component';
     MeetingComponent,
     MeetingDetailsComponent,
     SliderComponent,
-    ContactComponent
+    ContactComponent,
+    CustomSoftwareDevelopmentComponent,
+    MobileAppDevelopmentComponent,
+    WebDevelopmentComponent
   ],
   imports: [
     BrowserModule,

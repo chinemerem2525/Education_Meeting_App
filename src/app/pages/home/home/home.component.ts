@@ -117,10 +117,7 @@ export class HomeComponent implements AfterViewInit {
       }
     });
 
-    // Attempt autoplay
-    video.play().catch((error) => {
-      console.warn('Autoplay blocked. Waiting for user interaction.');
-    });
+    
 
     // Trigger card animations
     this.initializeCardAnimations();
