@@ -13,6 +13,12 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CustomSoftwareDevelopmentComponent } from './pages/services/softwareDevelopment/customSoftwareDevelopment/custom-software-development/custom-software-development.component';
 import { MobileAppDevelopmentComponent } from './pages/services/softwareDevelopment/mobileAppDevelopment/mobile-app-development/mobile-app-development.component';
 import { WebDevelopmentComponent } from './pages/services/softwareDevelopment/webDev/web-development/web-development.component';
+import { AngularDevComponent } from './pages/services/itHiring/angular-dev/angular-dev.component';
+import { ReatJSDevComponent } from './pages/services/itHiring/reat-jsdev/reat-jsdev.component';
+import { PythonDevComponent } from './pages/services/itHiring/python-dev/python-dev.component';
+import { NodeJSDevComponent } from './pages/services/itHiring/node-jsdev/node-jsdev.component';
+import { LaravelDevComponent } from './pages/services/itHiring/laravel-dev/laravel-dev.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +32,13 @@ import { WebDevelopmentComponent } from './pages/services/softwareDevelopment/we
     ContactComponent,
     CustomSoftwareDevelopmentComponent,
     MobileAppDevelopmentComponent,
-    WebDevelopmentComponent
+    WebDevelopmentComponent,
+    AngularDevComponent,
+    ReatJSDevComponent,
+    PythonDevComponent,
+    NodeJSDevComponent,
+    LaravelDevComponent,
+    
   ],
   imports: [
     BrowserModule,
