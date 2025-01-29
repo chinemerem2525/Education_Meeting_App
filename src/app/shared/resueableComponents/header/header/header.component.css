@@ -84,20 +84,19 @@
 /* Styles for dropdown menu */
 .sub-menu {
   position: absolute;
+  height: auto;
+  max-height: none; /* Ensures enough space */
+  overflow-y: auto; /* Enables scrolling if needed */
+  overflow: auto;
   top: 100%;
   left: 0;
   display: none;
   background-color: none;
-  z-index: 1000;
+  z-index: 9999;
   padding: 10px 0;
   list-style: none;
   min-width: 250px;
 
-}
-
-  /* Dropdown menu styles */
-  .sub-menu {
-    display: none;
 }
 
 .has-sub:hover > .sub-menu {
@@ -129,6 +128,9 @@
 .items li a {
   background-color: #f1f1f1;
   width: 320px;
+  padding: 10px; /* Use padding instead of fixed height */
+  display: block;
+  height: auto;
 }
 
 .items li a:hover {
@@ -219,7 +221,8 @@
 .mobile-nav
 {
   background-color: white;
-  height: 600px;
+  overflow: auto;
+  height: 800px;
   width: 300px;
   padding: 10px;
   justify-content: left;
@@ -229,7 +232,7 @@
 }
 
 .mobile-nav li a {
-  line-height: 30px;
+  line-height: 25px;
   color: black;
   margin-bottom: 10px;
 }

@@ -141,6 +141,8 @@
     color: white;
     transform: scale(1.1);
   }
+
+  
   
   /* Keyframes for animations */
   @keyframes slideIn {
@@ -212,11 +214,18 @@
   border: #FFD700 2px solid;
 }
 h2 {
+  padding: 10px;
   color: #FFD700;
 }
 p{
+  padding: 10px;
+  
   color: white;
  
+}
+ul{
+  padding: 10px;
+  padding-bottom: 20px;
 }
 .section {
   padding: 50px 0;
