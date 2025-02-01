@@ -18,6 +18,8 @@ import { ReatJSDevComponent } from './pages/services/itHiring/reat-jsdev/reat-js
 import { PythonDevComponent } from './pages/services/itHiring/python-dev/python-dev.component';
 import { NodeJSDevComponent } from './pages/services/itHiring/node-jsdev/node-jsdev.component';
 import { LaravelDevComponent } from './pages/services/itHiring/laravel-dev/laravel-dev.component';
+import { ItTalentAcquisitionComponent } from './pages/services/techTalent/it-talent-acquisition/it-talent-acquisition.component';
+import { ItStaffingAndRecruitmentComponent } from './pages/services/techTalent/it-staffing-and-recruitment/it-staffing-and-recruitment.component';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { LaravelDevComponent } from './pages/services/itHiring/laravel-dev/larav
     PythonDevComponent,
     NodeJSDevComponent,
     LaravelDevComponent,
-    
+    ItTalentAcquisitionComponent,
+    ItStaffingAndRecruitmentComponent
   ],
   imports: [
     BrowserModule,

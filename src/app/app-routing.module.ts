@@ -12,6 +12,8 @@ import { ReatJSDevComponent } from './pages/services/itHiring/reat-jsdev/reat-js
 import { PythonDevComponent } from './pages/services/itHiring/python-dev/python-dev.component';
 import { NodeJSDevComponent } from './pages/services/itHiring/node-jsdev/node-jsdev.component';
 import { LaravelDevComponent } from './pages/services/itHiring/laravel-dev/laravel-dev.component';
+import { ItTalentAcquisitionComponent } from './pages/services/techTalent/it-talent-acquisition/it-talent-acquisition.component';
+import { ItStaffingAndRecruitmentComponent } from './pages/services/techTalent/it-staffing-and-recruitment/it-staffing-and-recruitment.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -30,7 +32,10 @@ const routes: Routes = [
   {path: 'services/react-developer', component: ReatJSDevComponent},
   {path: 'services/python-developer', component: PythonDevComponent},
   {path: 'services/nodejs-developer', component: NodeJSDevComponent},
-  {path: 'services/laravel-developer', component: LaravelDevComponent}
+  {path: 'services/laravel-developer', component: LaravelDevComponent},
+
+  {path: 'services/it-talent-acquisition', component: ItTalentAcquisitionComponent},
+  {path: 'services/it-staffing-recruitment', component: ItStaffingAndRecruitmentComponent}
 ];
 
 @NgModule({
